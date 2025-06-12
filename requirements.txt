@@ -1,5 +1,5 @@
-Flask
-pandas
-openpyxl
-unidecode
-gunicorn
+Flask==3.0.0
+pandas==2.1.4
+openpyxl==3.1.2
+unidecode==1.3.7
+gunicorn==21.2.0

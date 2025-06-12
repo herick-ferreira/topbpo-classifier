@@ -1,10 +1,11 @@
 import os
 
 class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'your_secret_key_here'
-    UPLOAD_FOLDER = 'uploads'
-    PROCESSED_FOLDER = 'processed'
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'your_secret_key_here_change_in_production'
+    UPLOAD_FOLDER = os.environ.get('UPLOAD_FOLDER') or 'uploads'
+    PROCESSED_FOLDER = os.environ.get('PROCESSED_FOLDER') or 'processed'
     ALLOWED_EXTENSIONS = {'csv'}
+    MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16MB max file size
 
     @staticmethod
     def is_allowed_file(filename):
