@@ -20,12 +20,26 @@ def process_csv(file_path):
                 ("divida ativa" in descricao or historico in ['541', '141'])):
                 return 'Lançamentos Contábeis'
 
-            if (locatario != "" and imovel not in ["0", "00000", "99996"] and 
-                historico in ['541', '141']):
-                if verificar_reembolso_divida_ativa(df, locatario, imovel):
+            if  historico in ['541', '141']:
+                if verificar_reembolso(df, locatario, imovel, ['541', '141']):
                     return 'Lançamentos Contábeis'
                 else:
                     return 'Lançamentos manuais'
+            
+            elif historico in ['510', '110']:
+                if verificar_reembolso(df, locatario, imovel, ['510', '110']):
+                    return 'Lançamentos Contábeis'
+                else:
+                    return 'Lançamentos manuais'
+            
+            elif historico in ['505', '105']:
+                if verificar_reembolso(df, locatario, imovel, ['505', '105']):
+                    return 'Lançamentos Contábeis'
+                else:
+                    return 'Lançamentos manuais'
+                
+
+
 
             if endereco == "" and locatario == "" and imovel == "0":
                 return 'Lançamentos manuais'
@@ -56,7 +70,7 @@ def process_csv(file_path):
                     pd.notna(row['LOCATÁRIO']) and str(row['LOCATÁRIO']).strip() != ""):
                     if (descricao in ['imp.predial(iptu)', 'taxa incendio', 'condominio', 
                                       'seguro c/fogo', 'agua e esgoto', 'seguro fianca', 'cota extra', 'aforamento'] or
-                        historico in ['503', '528', '103', '128', '502', '134', '104', '584', '505', '149', '591', '524']):
+                        historico in ['503', '528', '103', '128', '502', '134', '104', '584', '505', '149', '591', '524', '202', '141', '191']):
                         return 'Lançamentos Contábeis'
 
             return 'Lançamentos manuais'
@@ -81,14 +95,22 @@ def process_csv(file_path):
     except Exception as e:
         raise Exception(f"Error processing CSV file: {str(e)}")
 
-def verificar_reembolso_divida_ativa(df, locatario, imovel):
+# Função auxiliar para verificar reembolso
+def verificar_reembolso(df, locatario, imovel, values=[]):
+    """
+    Verifica se existe cruzamento entre HISTORICO para mesmo LOCATÁRIO e IMÓVEL
+    """
     if not locatario or not imovel or imovel in ["0", "00000", "99996"]:
         return False
     
+    # Filtrar registros do mesmo locatário e imóvel
     registros_mesmo_local = df[
         (df['LOCATÁRIO'].astype(str).str.strip() == locatario) & 
         (df['IMÓVEL'].astype(str).str.strip() == imovel)
     ]
     
+    # Verificar se existem ambos os históricos da lista de valores
     historicos = registros_mesmo_local['HISTORICO'].astype(str).str.strip().unique()
-    return '541' in historicos and '141' in historicos
+    
+    response = all(value in historicos for value in values) if values else False
+    return response
