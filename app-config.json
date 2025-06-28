@@ -1,0 +1,12 @@
+{
+	"command": "python3 app.py",
+	"build_path": ".",
+	"stack": "python_3_9",
+	"env_variables": {
+		"PORT": "9000"
+	},
+	"memory": 256,
+	"scripts": {
+        "predeploy": "python -m pip install --platform manylinux2014_x86_64 --target=. --implementation cp --python-version 3.9 --only-binary=:all: --upgrade -r ./requirements.txt -t .​"
+    }
+}

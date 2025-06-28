@@ -1,0 +1,141 @@
+[debug] [2025-06-28T01:17:04.734Z] : 
+[debug] [2025-06-28T01:17:04.735Z] : ----------------------------------------------------------------------
+[debug] [2025-06-28T01:17:04.735Z] : Command:      C:\Program Files\nodejs\node.exe C:\Users\heric\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\bin\catalyst.js deploy --verbose
+[debug] [2025-06-28T01:17:04.736Z] : CLI Version:  1.18.1
+[debug] [2025-06-28T01:17:04.736Z] : Platform:     win32
+[debug] [2025-06-28T01:17:04.737Z] : Node Version: v20.10.0
+[debug] [2025-06-28T01:17:04.737Z] : Time:         Fri Jun 27 2025 22:17:04 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2025-06-28T01:17:04.738Z] : ----------------------------------------------------------------------
+[debug] [2025-06-28T01:17:04.738Z] : 
+[debug] [2025-06-28T01:17:05.016Z] : > authorizing via signed-in user option
+[debug] [2025-06-28T01:17:05.017Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.functions.ALL","ZohoCatalyst.webapp.ALL","ZohoCatalyst.appsail.Update"]
+[debug] [2025-06-28T01:17:05.030Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/28570000000011038 
+
+[debug] [2025-06-28T01:17:05.639Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Sat, 28 Jun 2025 01:17:02 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-06-28T01:17:05.645Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/28570000000011038/environment 
+
+[debug] [2025-06-28T01:17:05.842Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Sat, 28 Jun 2025 01:17:02 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[info] [2025-06-28T01:17:05.865Z] : 
+[info] [2025-06-28T01:17:05.866Z] : Executing predeploy script in C:\Users\heric\Downloads\topbpo-classifier
+[debug] [2025-06-28T01:17:05.867Z] : Executing command > python -m pip install --platform manylinux2014_x86_64 --target=. --implementation cp --python-version 3.9 --only-binary=:all: --upgrade -r ./requirements.txt -t .​
+[info] [2025-06-28T01:17:05.868Z] : > python -m pip install --platform manylinux2014_x86_64 --target=. --implementation cp --python-version 3.9 --only-binary=:all: --upgrade -r ./requirements.txt -t .​
+[debug] [2025-06-28T01:21:29.546Z] : >>>> HTTP REQUEST : PUT https://api.catalyst.zoho.com/baas/v1/project/28570000000011038/appsail/upsert 
+
+[debug] [2025-06-28T01:21:52.323Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Sat, 28 Jun 2025 01:21:48 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[info] [2025-06-28T01:21:52.329Z] : 
+[info] [2025-06-28T01:21:52.330Z] : i AppSail(topbpo-classifier): URL => https://topbpo-classifier-10100888346.development.catalystappsail.com
+[info] [2025-06-28T01:21:52.331Z] : √ AppSail(topbpo-classifier): deploy successful
+[info] [2025-06-28T01:21:52.332Z] : 
+[info] [2025-06-28T01:21:52.333Z] : √ Catalyst deploy complete!
+[debug] [2025-06-28T01:21:52.334Z] : NO ERRORS REGISTERED
+[debug] [2025-06-28T01:21:52.336Z] : EXEC ENDED with event: deploy, message: success
+[debug] [2025-06-28T01:21:52.336Z] : TOTAL DURATION OF COMMAND EXEC : 287326
+[debug] [2025-06-28T01:21:52.473Z] : >>>> HTTP REQUEST : POST https://api.catalyst.zoho.com/baas/v1/cli/logs 
+<request body omitted>
+
+[debug] [2025-06-28T01:21:52.968Z] : <<<< HTTP RESPONSE : 400
+Response Headers: {"server":"ZGS","date":"Sat, 28 Jun 2025 01:21:49 GMT","content-type":"application/json;charset=ISO-8859-1","content-length":"148","connection":"keep-alive","x-content-type-options":"nosniff","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-06-28T01:21:52.969Z] : Response Body : {"status":"failure","data":{"error_code":"INPUT_SIZE_MORE_THAN_ALLOWED","message":"Please check if the size of the input is in the correct range"}}
+
+[debug] [2025-06-28T01:21:52.971Z] : Unable to send debug log to server: HTTP Error: 400, Please check if the size of the input is in the correct range
+[debug] [2025-06-28T01:24:23.510Z] : 
+[debug] [2025-06-28T01:24:23.513Z] : ----------------------------------------------------------------------
+[debug] [2025-06-28T01:24:23.514Z] : Command:      C:\Program Files\nodejs\node.exe C:\Users\heric\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\bin\catalyst.js deploy --verbose
+[debug] [2025-06-28T01:24:23.514Z] : CLI Version:  1.18.1
+[debug] [2025-06-28T01:24:23.515Z] : Platform:     win32
+[debug] [2025-06-28T01:24:23.515Z] : Node Version: v20.10.0
+[debug] [2025-06-28T01:24:23.516Z] : Time:         Fri Jun 27 2025 22:24:23 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2025-06-28T01:24:23.516Z] : ----------------------------------------------------------------------
+[debug] [2025-06-28T01:24:23.516Z] : 
+[debug] [2025-06-28T01:24:23.877Z] : > authorizing via signed-in user option
+[debug] [2025-06-28T01:24:23.878Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.functions.ALL","ZohoCatalyst.webapp.ALL","ZohoCatalyst.appsail.Update"]
+[debug] [2025-06-28T01:24:23.891Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/28570000000011038 
+
+[debug] [2025-06-28T01:24:24.517Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Sat, 28 Jun 2025 01:24:20 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-06-28T01:24:24.524Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/28570000000011038/environment 
+
+[debug] [2025-06-28T01:24:24.716Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Sat, 28 Jun 2025 01:24:21 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[info] [2025-06-28T01:24:24.744Z] : 
+[info] [2025-06-28T01:24:24.745Z] : Executing predeploy script in C:\Users\heric\Downloads\topbpo-classifier
+[debug] [2025-06-28T01:24:24.746Z] : Executing command > python -m pip install --platform manylinux2014_x86_64 --target=. --implementation cp --python-version 3.9 --only-binary=:all: --upgrade -r ./requirements.txt -t .​
+[info] [2025-06-28T01:24:24.746Z] : > python -m pip install --platform manylinux2014_x86_64 --target=. --implementation cp --python-version 3.9 --only-binary=:all: --upgrade -r ./requirements.txt -t .​
+[debug] [2025-06-28T01:28:46.449Z] : >>>> HTTP REQUEST : PUT https://api.catalyst.zoho.com/baas/v1/project/28570000000011038/appsail/upsert 
+
+[debug] [2025-06-28T01:29:08.557Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Sat, 28 Jun 2025 01:29:05 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[info] [2025-06-28T01:29:08.563Z] : 
+[info] [2025-06-28T01:29:08.565Z] : i AppSail(topbpo-classifier): URL => https://topbpo-classifier-10100888346.development.catalystappsail.com
+[info] [2025-06-28T01:29:08.566Z] : √ AppSail(topbpo-classifier): deploy successful
+[info] [2025-06-28T01:29:08.567Z] : 
+[info] [2025-06-28T01:29:08.567Z] : √ Catalyst deploy complete!
+[debug] [2025-06-28T01:29:08.568Z] : NO ERRORS REGISTERED
+[debug] [2025-06-28T01:29:08.569Z] : EXEC ENDED with event: deploy, message: success
+[debug] [2025-06-28T01:29:08.569Z] : TOTAL DURATION OF COMMAND EXEC : 284700
+[debug] [2025-06-28T01:29:08.624Z] : >>>> HTTP REQUEST : POST https://api.catalyst.zoho.com/baas/v1/cli/logs 
+<request body omitted>
+
+[debug] [2025-06-28T01:29:09.088Z] : <<<< HTTP RESPONSE : 400
+Response Headers: {"server":"ZGS","date":"Sat, 28 Jun 2025 01:29:05 GMT","content-type":"application/json;charset=ISO-8859-1","content-length":"148","connection":"keep-alive","x-content-type-options":"nosniff","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-06-28T01:29:09.089Z] : Response Body : {"status":"failure","data":{"error_code":"INPUT_SIZE_MORE_THAN_ALLOWED","message":"Please check if the size of the input is in the correct range"}}
+
+[debug] [2025-06-28T01:29:09.104Z] : Unable to send debug log to server: HTTP Error: 400, Please check if the size of the input is in the correct range
+[debug] [2025-06-28T01:32:45.087Z] : 
+[debug] [2025-06-28T01:32:45.088Z] : ----------------------------------------------------------------------
+[debug] [2025-06-28T01:32:45.089Z] : Command:      C:\Program Files\nodejs\node.exe C:\Users\heric\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\bin\catalyst.js deploy --verbose
+[debug] [2025-06-28T01:32:45.089Z] : CLI Version:  1.18.1
+[debug] [2025-06-28T01:32:45.090Z] : Platform:     win32
+[debug] [2025-06-28T01:32:45.090Z] : Node Version: v20.10.0
+[debug] [2025-06-28T01:32:45.091Z] : Time:         Fri Jun 27 2025 22:32:45 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2025-06-28T01:32:45.091Z] : ----------------------------------------------------------------------
+[debug] [2025-06-28T01:32:45.091Z] : 
+[debug] [2025-06-28T01:32:45.538Z] : > authorizing via signed-in user option
+[debug] [2025-06-28T01:32:45.539Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.functions.ALL","ZohoCatalyst.webapp.ALL","ZohoCatalyst.appsail.Update"]
+[debug] [2025-06-28T01:32:45.549Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/28570000000011038 
+
+[debug] [2025-06-28T01:32:46.166Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Sat, 28 Jun 2025 01:32:42 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-06-28T01:32:46.173Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/28570000000011038/environment 
+
+[debug] [2025-06-28T01:32:46.372Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Sat, 28 Jun 2025 01:32:42 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[info] [2025-06-28T01:32:46.427Z] : 
+[info] [2025-06-28T01:32:46.428Z] : Executing predeploy script in C:\Users\heric\Downloads\topbpo-classifier
+[debug] [2025-06-28T01:32:46.430Z] : Executing command > python -m pip install --platform manylinux2014_x86_64 --target=. --implementation cp --python-version 3.9 --only-binary=:all: --upgrade -r ./requirements.txt -t .​
+[info] [2025-06-28T01:32:46.431Z] : > python -m pip install --platform manylinux2014_x86_64 --target=. --implementation cp --python-version 3.9 --only-binary=:all: --upgrade -r ./requirements.txt -t .​
+[debug] [2025-06-28T01:36:51.770Z] : >>>> HTTP REQUEST : PUT https://api.catalyst.zoho.com/baas/v1/project/28570000000011038/appsail/upsert 
+
+[debug] [2025-06-28T01:37:14.546Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Sat, 28 Jun 2025 01:37:10 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[info] [2025-06-28T01:37:14.560Z] : 
+[info] [2025-06-28T01:37:14.563Z] : i AppSail(topbpo-classifier): URL => https://topbpo-classifier-10100888346.development.catalystappsail.com
+[info] [2025-06-28T01:37:14.564Z] : √ AppSail(topbpo-classifier): deploy successful
+[info] [2025-06-28T01:37:14.566Z] : 
+[info] [2025-06-28T01:37:14.567Z] : √ Catalyst deploy complete!
+[debug] [2025-06-28T01:37:14.569Z] : NO ERRORS REGISTERED
+[debug] [2025-06-28T01:37:14.571Z] : EXEC ENDED with event: deploy, message: success
+[debug] [2025-06-28T01:37:14.572Z] : TOTAL DURATION OF COMMAND EXEC : 269039
+[debug] [2025-06-28T01:37:14.648Z] : >>>> HTTP REQUEST : POST https://api.catalyst.zoho.com/baas/v1/cli/logs 
+<request body omitted>
+
+[debug] [2025-06-28T01:37:15.122Z] : <<<< HTTP RESPONSE : 400
+Response Headers: {"server":"ZGS","date":"Sat, 28 Jun 2025 01:37:11 GMT","content-type":"application/json;charset=ISO-8859-1","content-length":"148","connection":"keep-alive","x-content-type-options":"nosniff","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-06-28T01:37:15.123Z] : Response Body : {"status":"failure","data":{"error_code":"INPUT_SIZE_MORE_THAN_ALLOWED","message":"Please check if the size of the input is in the correct range"}}
+
+[debug] [2025-06-28T01:37:15.147Z] : Unable to send debug log to server: HTTP Error: 400, Please check if the size of the input is in the correct range

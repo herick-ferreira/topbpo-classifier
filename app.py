@@ -1,3 +1,10 @@
+import os
+import sys
+
+# Adiciona o diretório com as bibliotecas ao path do Python
+sys.path.insert(0, '.\u200b')  # Diretório com zero-width space
+sys.path.insert(0, '.')
+
 from flask import Flask, render_template, request, send_file
 import os
 import pandas as pd
