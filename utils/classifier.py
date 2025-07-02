@@ -1,6 +1,6 @@
 import pandas as pd
 from unidecode import unidecode
-import os
+import os, re
 
 def process_csv(file_path):
     try:
@@ -87,6 +87,11 @@ def process_csv(file_path):
         # Ensure processed directory exists
         os.makedirs('processed', exist_ok=True)
         
+        # Aplicar limpeza em todas as colunas de texto
+        for col in df.columns:
+            if df[col].dtype == 'object':  # Colunas de texto
+                df[col] = df[col].apply(limpar_para_excel)
+        
         # Save the classified data to Excel
         df.to_excel(output_file, index=False)
 
@@ -114,3 +119,19 @@ def verificar_reembolso(df, locatario, imovel, values=[]):
     
     response = all(value in historicos for value in values) if values else False
     return response
+
+# Função para limpar caracteres especiais para Excel
+def limpar_para_excel(texto):
+    """
+    Remove caracteres que podem causar problemas no Excel
+    """
+    if pd.isna(texto):
+        return ""
+    
+    texto = str(texto)
+    # Remove caracteres de controle (0x00-0x1F exceto tab, newline, carriage return)
+    texto = re.sub(r'[\x00-\x08\x0B-\x0C\x0E-\x1F\x7F]', '', texto)
+    # Remove caracteres problemáticos específicos
+    texto = texto.replace('\x00', '').replace('\x01', '').replace('\x02', '')
+    
+    return texto
