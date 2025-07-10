@@ -139,3 +139,57 @@ Response Headers: {"server":"ZGS","date":"Sat, 28 Jun 2025 01:37:11 GMT","conten
 [debug] [2025-06-28T01:37:15.123Z] : Response Body : {"status":"failure","data":{"error_code":"INPUT_SIZE_MORE_THAN_ALLOWED","message":"Please check if the size of the input is in the correct range"}}
 
 [debug] [2025-06-28T01:37:15.147Z] : Unable to send debug log to server: HTTP Error: 400, Please check if the size of the input is in the correct range
+[debug] [2025-07-02T01:49:08.713Z] : 
+[debug] [2025-07-02T01:49:08.716Z] : ----------------------------------------------------------------------
+[debug] [2025-07-02T01:49:08.717Z] : Command:      C:\Program Files\nodejs\node.exe C:\Users\heric\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\bin\catalyst.js deploy --verbose
+[debug] [2025-07-02T01:49:08.718Z] : CLI Version:  1.18.1
+[debug] [2025-07-02T01:49:08.718Z] : Platform:     win32
+[debug] [2025-07-02T01:49:08.719Z] : Node Version: v20.10.0
+[debug] [2025-07-02T01:49:08.719Z] : Time:         Tue Jul 01 2025 22:49:08 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2025-07-02T01:49:08.720Z] : ----------------------------------------------------------------------
+[debug] [2025-07-02T01:49:08.720Z] : 
+[debug] [2025-07-02T01:49:09.398Z] : > authorizing via signed-in user option
+[debug] [2025-07-02T01:49:09.399Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.functions.ALL","ZohoCatalyst.webapp.ALL","ZohoCatalyst.appsail.Update"]
+[debug] [2025-07-02T01:49:09.433Z] : > refreshing access token <
+[debug] [2025-07-02T01:49:09.437Z] : >>>> HTTP REQUEST : POST https://accounts.zoho.com/oauth/v2/token 
+<request body omitted>
+
+[debug] [2025-07-02T01:49:10.158Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Wed, 02 Jul 2025 01:49:08 GMT","content-type":"application/json;charset=UTF-8","content-length":"2393","connection":"keep-alive","cache-control":"no-store","x-content-type-options":"nosniff","pragma":"no-cache","x-frame-options":"SAMEORIGIN","vary":"accept-encoding","content-language":"en-US","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-07-02T01:49:10.181Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/28570000000011038 
+
+[debug] [2025-07-02T01:49:11.057Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Wed, 02 Jul 2025 01:49:09 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-07-02T01:49:11.061Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/28570000000011038/environment 
+
+[debug] [2025-07-02T01:49:11.262Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Wed, 02 Jul 2025 01:49:09 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[info] [2025-07-02T01:49:11.294Z] : 
+[info] [2025-07-02T01:49:11.295Z] : Executing predeploy script in C:\Users\heric\Downloads\topbpo-classifier
+[debug] [2025-07-02T01:49:11.296Z] : Executing command > python -m pip install --platform manylinux2014_x86_64 --target=. --implementation cp --python-version 3.9 --only-binary=:all: --upgrade -r ./requirements.txt -t .​
+[info] [2025-07-02T01:49:11.298Z] : > python -m pip install --platform manylinux2014_x86_64 --target=. --implementation cp --python-version 3.9 --only-binary=:all: --upgrade -r ./requirements.txt -t .​
+[debug] [2025-07-02T01:55:43.304Z] : >>>> HTTP REQUEST : PUT https://api.catalyst.zoho.com/baas/v1/project/28570000000011038/appsail/upsert 
+
+[debug] [2025-07-02T01:56:31.948Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Wed, 02 Jul 2025 01:56:30 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[info] [2025-07-02T01:56:31.963Z] : 
+[info] [2025-07-02T01:56:31.967Z] : i AppSail(topbpo-classifier): URL => https://topbpo-classifier-10100888346.development.catalystappsail.com
+[info] [2025-07-02T01:56:31.969Z] : √ AppSail(topbpo-classifier): deploy successful
+[info] [2025-07-02T01:56:31.970Z] : 
+[info] [2025-07-02T01:56:31.971Z] : √ Catalyst deploy complete!
+[debug] [2025-07-02T01:56:31.972Z] : NO ERRORS REGISTERED
+[debug] [2025-07-02T01:56:31.973Z] : EXEC ENDED with event: deploy, message: success
+[debug] [2025-07-02T01:56:31.974Z] : TOTAL DURATION OF COMMAND EXEC : 442668
+[debug] [2025-07-02T01:56:32.063Z] : >>>> HTTP REQUEST : POST https://api.catalyst.zoho.com/baas/v1/cli/logs 
+<request body omitted>
+
+[debug] [2025-07-02T01:56:32.655Z] : <<<< HTTP RESPONSE : 400
+Response Headers: {"server":"ZGS","date":"Wed, 02 Jul 2025 01:56:30 GMT","content-type":"application/json;charset=ISO-8859-1","content-length":"148","connection":"keep-alive","x-content-type-options":"nosniff","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-07-02T01:56:32.658Z] : Response Body : {"status":"failure","data":{"error_code":"INPUT_SIZE_MORE_THAN_ALLOWED","message":"Please check if the size of the input is in the correct range"}}
+
+[debug] [2025-07-02T01:56:32.672Z] : Unable to send debug log to server: HTTP Error: 400, Please check if the size of the input is in the correct range
